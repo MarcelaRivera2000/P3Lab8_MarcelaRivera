@@ -53,6 +53,12 @@ void Post::setDislikes(){
 
 void Post::Publicar(){
 	cout<<"Usuario: "<<usuario<<endl<<"Titulo: "<<titulo<<endl<<"Contenido: "<<contenido<<endl<<endl<<"likes: "<<likes<<"   dislikes:"<<dislikes<<endl;
-	
+
+	for(int i=0;i<coments.size();i++){
+		cout<<"-----------------------"<<endl;
+		cout<<"Usuario: "<<coments[i].getUsuario()<<endl<<"coment: "<<coments[i].getContenido();
+	}
+	cout<<endl;
+	cout<<"----------------------"<<endl;
 }
 

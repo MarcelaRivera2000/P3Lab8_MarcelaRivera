@@ -1,7 +1,10 @@
 #include <iostream>
+#include <stdlib.h>
 #include <vector>
 #include "Usuarios.h"
-
+#include <fstream>
+#include <string.h>
+#include "Archivo.h"
 
 using namespace std; 
 using std::cin;
@@ -14,8 +17,17 @@ vector<Usuarios> lista;
 void Red();
 int posi;
 void menu();
+Archivo arch;
+
 
 int main(int argc, char** argv) {
+/*	Usuarios e=Usuarios("marcela","merv","123");
+	e.setPost(Post("putos","v","dsadsa"));
+	e.setPost(Post("salkj","123","dsadsa"));
+	e.setPost(Post("sadasdsad","dsadsa","dsadsa"));
+	arch.Escribir(e);
+	*/
+	lista = arch.leer();
 	while(true){
 		menu();
 	}
@@ -50,7 +62,9 @@ void Regitrarse(){
 	cin>>usuario;
 	cout<<"Ingrese su contrasena"<<endl<<":";
 	cin>>contra;
-	lista.push_back(Usuarios(nombre,usuario,contra));
+	Usuarios e=Usuarios(nombre,usuario,contra);
+	lista.push_back(e);
+	arch.Escribir(e);
 	cout<<"Se registro exitosamente... "<<endl<<endl;
 }
 
@@ -95,9 +109,7 @@ void Red(){
 			cout<<"Ingrese el contenido"<<endl<<":";
 			cin>>contenido;
 			lista[posi].setPost(Post(titulo,contenido,lista[posi].getUsuario()));
-			
-			
-			
+			arch.Escribir(lista[posi]);
 			break;
 		}
 		case 2:{
@@ -106,16 +118,11 @@ void Red(){
 				for(int j=0;j<lista[i].getPost().size();j++){
 					cout<<endl<<"--------- "<<j<<" ---------"<<endl;
 					lista[i].getPost()[j].Publicar();
-					
-					for(int k=0;k<lista[i].getPost()[j].getComents().size();k++){
-						cout<<"-----------------------"<<endl;
-						cout<<"Usuario: "<<lista[i].getPost()[j].getComents()[k].getUsuario()<<endl<<": "<<lista[i].getPost()[j].getComents()[k].getContenido();
-					}
-					cout<<"----------------------"<<endl;
 				}
 			}
 			cout<<"Ingrese la posicion del post "<<endl<<":";
 			cin>>posi2;
+			
 			for(int i=0; i<lista.size(); i++){
 				aux=i;
 				for(int j=0;j<lista[i].getPost().size();j++){
@@ -128,7 +135,7 @@ void Red(){
 			string coment;
 			cin>>coment;
 			lista[aux].getPost()[posi2].setComents(Comentarios(lista[posi].getUsuario(),coment));
-			
+			arch.Escribir(lista[aux]);
 			
 			break;
 		}
@@ -151,6 +158,7 @@ void Red(){
 				}	
 			}
 			lista[aux].getPost()[posi2].setLikes();
+			arch.Escribir(lista[aux]);
 			break;
 		}
 		case 4:{
@@ -172,6 +180,7 @@ void Red(){
 				}	
 			}
 			lista[aux].getPost()[posi2].setDislikes();
+			arch.Escribir(lista[aux]);
 			break;
 		}
 		case 5:{
@@ -183,6 +192,7 @@ void Red(){
 			cout<<"Ingrese la posicion del usuario "<<endl<<":";
 			cin>>posi2;
 			lista[posi].setSeguidos(lista[posi2]);
+			arch.Escribir(lista[posi]);
 			break;
 		}
 		case 6:{
@@ -194,23 +204,12 @@ void Red(){
 			cout<<"Ingrese la posicion del usuario "<<endl<<":";
 			cin>>posi2;
 			lista[posi].getSeguidos().erase(lista[posi].getSeguidos().begin() + posi2);
+			arch.Escribir(lista[posi]);
 			break;
 		}
 	}	
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
