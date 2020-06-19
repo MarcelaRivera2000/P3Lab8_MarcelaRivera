@@ -14,7 +14,8 @@ class Usuarios{
 		string getContra();
 		vector<Usuarios> getSeguidos();
 		vector<Post> getPost();
-
+		void setPost(Post h);
+		void setSeguidos(Usuarios h);
 		
 	protected:
 		string nombre,usuario,contra;

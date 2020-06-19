@@ -8,18 +8,23 @@ using namespace std;
 
 class Post{
 	public: 
-		Post(string,string);
+		Post(string,string,string);
 		string getTitulo();
 		string getContenido();
+		string getUsuario();
 		int getLikes();
 		int getDislikes();
 		void setLikes();
 		void setDislikes();
+		vector<Comentarios> getComents();
+		void Publicar();
+		void setComents(Comentarios);
 		
 	protected:
-		string titulo,contenido;
+		string titulo,contenido,usuario;
 		int likes,dislikes;
 		vector<Comentarios> coments;
+		
 };
 
 

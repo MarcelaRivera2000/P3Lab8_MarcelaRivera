@@ -25,3 +25,12 @@ vector<Usuarios> Usuarios::getSeguidos(){
 vector<Post> Usuarios::getPost(){
 	return posts;
 }
+
+void Usuarios::setPost(Post h){
+	posts.push_back(h);
+	
+}
+void Usuarios::setSeguidos(Usuarios h){
+	seguidos.push_back(h);
+	
+}
