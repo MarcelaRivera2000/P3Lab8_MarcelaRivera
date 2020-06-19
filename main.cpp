@@ -21,12 +21,12 @@ Archivo arch;
 
 
 int main(int argc, char** argv) {
-/*	Usuarios e=Usuarios("marcela","merv","123");
+	Usuarios e=Usuarios("marcela","merv","123");
 	e.setPost(Post("putos","v","dsadsa"));
 	e.setPost(Post("salkj","123","dsadsa"));
 	e.setPost(Post("sadasdsad","dsadsa","dsadsa"));
 	arch.Escribir(e);
-	*/
+	
 	lista = arch.leer();
 	while(true){
 		menu();

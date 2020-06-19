@@ -1,5 +1,6 @@
 #include "Archivo.h"
 #include <iostream>
+#include <cstring>
 
 using namespace std; 
 using std::cout;
@@ -28,11 +29,23 @@ vector<Usuarios> Archivo::leer(){
 	exit(1);
 	}
 	vector<Usuarios> aux;
-	string text;
+	string text="";
 	while(!archivo.eof()){
-		
 		getline(archivo,text);
-		cout<<text<<endl;
+		char frase[text.size()];
+		for(int i=0;i<text.size();i++){
+			frase[i]=text[i];
+			
+		
+		}
+  		char *ptr;
+  		ptr = strtok(frase,",");
+		while(ptr != NULL){
+     	 cout << ptr << endl;
+     	 
+      	 ptr = strtok(NULL, ",");
+   		}
+   		
 	}
 	archivo.close();
 	return aux;
