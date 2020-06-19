@@ -1,1 +1,1 @@
-marcela;merv;123;|putos,v,00|salkj,123,00|sadasdsad,dsadsa,00|
+marcela;merv;123;|putos,v,0,0,|salkj,123,0,0,|sadasdsad,dsadsa,0,0,|<

@@ -8,7 +8,7 @@ using namespace std;
 
 class Post{
 	public: 
-		Post(string,string,string);
+		Post(string,string,string,int, int);
 		string getTitulo();
 		string getContenido();
 		string getUsuario();

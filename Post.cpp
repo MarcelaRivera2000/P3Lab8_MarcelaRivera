@@ -5,12 +5,12 @@ using std::cin;
 using std::endl;
 using std::cout;
 
-Post::Post(string t,string c,string u){
+Post::Post(string t,string c,string u,int i,int j){
 	titulo=t;
 	contenido=c;
 	usuario=u;
-	likes=0;
-	dislikes=0;
+	likes=i;
+	dislikes=j;
 }
 
 string Post::getTitulo(){

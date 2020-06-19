@@ -21,13 +21,13 @@ Archivo arch;
 
 
 int main(int argc, char** argv) {
-	/*Usuarios e=Usuarios("marcela","merv","123");
-	e.setPost(Post("putos","v","dsadsa"));
-	e.setPost(Post("salkj","123","dsadsa"));
-	e.setPost(Post("sadasdsad","dsadsa","dsadsa"));
-	arch.Escribir(e);*/
+	Usuarios e=Usuarios("marcela","merv","123");
+	e.setPost(Post("putos","v","dsadsa",0,0));
+	e.setPost(Post("salkj","123","dsadsa",0,0));
+	e.setPost(Post("sadasdsad","dsadsa","dsadsa",0,0));
+	arch.Escribir(e);
 	
-	arch.leer();
+	lista = arch.leer();
 	while(true){
 		menu();
 	}
@@ -108,7 +108,7 @@ void Red(){
 			cin>>titulo;
 			cout<<"Ingrese el contenido"<<endl<<":";
 			cin>>contenido;
-			lista[posi].setPost(Post(titulo,contenido,lista[posi].getUsuario()));
+			lista[posi].setPost(Post(titulo,contenido,lista[posi].getUsuario(),0,0));
 			arch.Escribir(lista[posi]);
 			break;
 		}
