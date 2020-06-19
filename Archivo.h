@@ -12,7 +12,7 @@ using std::ofstream;
 class Archivo{
 	public:
 		void Escribir(Usuarios);
-		vector<Usuarios> leer();
+		void leer();
 	protected:
 		string fileName="Usuarios.txt";
 		ofstream outputFile;
