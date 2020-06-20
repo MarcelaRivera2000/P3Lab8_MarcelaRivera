@@ -30,28 +30,28 @@ vector<Usuarios> Archivo::leer(){
 	}
 	vector<Usuarios> aux;
 	string text,aux1="",aux2="",aux3="",uax1="",uax2="",uax5="";
-	int uax3,uax4,cont=0,cont2=0,cont3=0,cont4=0;
-	Usuarios e;
+	int uax3,uax4,cont=0,cont2=0,cont3=0,cont4=0,ii;
+	Usuarios e=Usuarios("aux","aux","aux");
 	while(!archivo.eof()){
 		getline(archivo,text);
 		for(int i=0;i<text.size();i++){
 		if((char)text[i]=='<'){
 		cont4++;
 		}
-		if(con4==1){
+		if(cont4==1){
 			aux.push_back(e);
 			aux1="";
-		aux2="";
-		aux3="";
-		uax1="";
-		uax2="";
-		uax5="";
-	 	uax3=0;
-		 uax4=0;
-		 cont=0;
-		 cont2=0;
-	 	cont3=0;
-	 	cont4=0;
+			aux2="";
+			aux3="";
+			uax1="";
+			uax2="";
+			uax5="";
+	 		uax3=0;
+			uax4=0;
+		 	cont=0;
+			cont2=0;
+	 		cont3=0;
+	 		cont4=0;
 	 
 		}
 		if(cont<=2){
@@ -90,9 +90,9 @@ vector<Usuarios> Archivo::leer(){
 				cont3++;
 			}
 			if(cont3==0){
-			uax1+=(char)text[i];	
+				uax1+=(char)text[i];	
 			}else if (cont3==1){
-					uax2+=(char)text[i];	
+				uax2+=(char)text[i];	
 			}else if (cont3==2){
 				uax3+=(int)text[i];
 			}else if (cont3==3){
@@ -107,8 +107,7 @@ vector<Usuarios> Archivo::leer(){
 		}
 		
 		
-		}//end for
-		cout<<endl<<"aqui: "<<aux3<<endl;
+		}
 		
  
 	}

@@ -21,13 +21,17 @@ Archivo arch;
 
 
 int main(int argc, char** argv) {
-	Usuarios e=Usuarios("marcela","merv","123");
+	/*Usuarios e=Usuarios("marcela","merv","123");
 	e.setPost(Post("putos","v","dsadsa",0,0));
 	e.setPost(Post("salkj","123","dsadsa",0,0));
 	e.setPost(Post("sadasdsad","dsadsa","dsadsa",0,0));
 	arch.Escribir(e);
+	*/
 	
 	lista = arch.leer();
+	cout<<lista.size()<<endl;
+	
+	
 	while(true){
 		menu();
 	}
